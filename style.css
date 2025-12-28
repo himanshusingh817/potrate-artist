@@ -1,0 +1,33 @@
+
+.two-images{
+    display:flex;
+    gap:10px;
+}
+
+.two-images img{
+    width:50%;
+    height:400px;
+    object-fit:cover;
+}
+
+.btn-center{
+    text-align:center;
+    margin:30px 0;
+}
+
+.create-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#2e7d32;
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.create-btn:hover{
+    background:#1b5e20;
+    transform:scale(1.05);
+}

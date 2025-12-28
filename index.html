@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Portrait Artist</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+}
+
+header{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px 10px;
+}
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+/* ROW */
+.row{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+/* CARD */
+.card{
+    width:50%;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    text-align:center;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0 5px;
+}
+
+.card p{
+    margin:5px 0;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:green;
+    margin-bottom:15px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .row{
+        flex-direction:column;
+    }
+    .card{
+        width:100%;
+    }
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Nitin Kumar</h1>
+    <h1>Portrait Artist</h1>
+</header>
+
+<div class="container">
+
+    <!-- TOP ROW -->
+    <div class="row">
+        <div class="card">
+            <h3>Single Portrait</h3>
+            <p>A4 Size</p>
+            <div class="price">₹499</div>
+        </div>
+
+        <div class="card">
+            <h3>Single Portrait</h3>
+            <p>A3 Size</p>
+            <div class="price">₹599</div>
+        </div>
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="row">
+        <div class="card">
+            <h3>Couple Portrait</h3>
+            <p>A4 Size</p>
+            <div class="price">₹699</div>
+        </div>
+
+        <div class="card">
+            <h3>Couple Portrait</h3>
+            <p>A3 Size</p>
+            <div class="price">From ₹1199</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="two-images">
+    <img src="hanuman.jpeg" alt="Image 1">
+    <img src="eye.jpeg" alt="Image 2">
+</div>
+
+<div class="btn-center">
+    <a href="second.html" class="create-btn">Create Your Own Portrait</a>
+</div>
+
+
+<footer>
+    © 2025 Portrait Artist | All Rights Reserved
+</footer>
+
+</body>
+</html>

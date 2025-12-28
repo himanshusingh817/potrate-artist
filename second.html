@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portrait Project Submission</title>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+}
+header{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+section{
+    max-width:600px;
+    background:#fff;
+    margin:30px auto;
+    padding:25px;
+    border-radius:8px;
+}
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+textarea{
+    height:100px;
+}
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#1b5e20;
+}
+#msg{
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Portrait Artist</h1>
+    <p>Client Project Submission</p>
+</header>
+
+<section>
+<form id="projectForm">
+    <label>Client Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Mobile</label>
+    <input type="text" name="mobile" required>
+
+    <label>Project Details</label>
+    <textarea name="project" required></textarea>
+
+    <button type="submit">Submit Project</button>
+</form>
+
+<p id="msg"></p>
+</section>
+
+<script>
+(function(){
+    emailjs.init("dIuiUV6jZ039aSRR0"); 
+})();
+
+document.getElementById("projectForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_nv8rr5c",   
+        "template_bwdqe88",   
+        this
+    ).then(
+        function(){
+            document.getElementById("msg").style.color = "green";
+            document.getElementById("msg").innerText =
+                "✅ Project sent successfully!";
+            document.getElementById("projectForm").reset();
+        },
+        function(error){
+            document.getElementById("msg").style.color = "red";
+            document.getElementById("msg").innerText =
+                "❌ Failed to send project!";
+        }
+    );
+});
+</script>
+
+</body>
+</html>
